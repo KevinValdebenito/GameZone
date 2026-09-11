@@ -1,5 +1,7 @@
 package org.example
 
+import Consola
+
 val nombreSistema: String = "GameZone"
 val capacidad: Int = 10
 var recaudacionTotal: Double = 0.0
@@ -42,6 +44,11 @@ fun main() {
     }else{
         println("No tienes beneficio de socio")
     }
+
+    println(consola.codigo)
+    println(consola.marca)
+    println(consola.modelo)
+    println(consola.tipoUsuario)
 }
 
 fun calcularCostoBase(
@@ -72,4 +79,13 @@ fun aplicarBeneficioUsuario(monto: Double, tipoUsuario: String): Double {
         else -> monto
     }
 }
+
+val consola = Consola(
+    codigo = "CC12CD",
+    marca = "Sony",
+    modelo = "PlayStation 5",
+    tipoUsuario = "socio",
+)
+
+
 
