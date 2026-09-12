@@ -1,6 +1,9 @@
 package org.example
 
 import Consola
+import ConsolaClasica
+import ConsolaModerna
+import ConsolaVR
 
 val nombreSistema: String = "GameZone"
 val capacidad: Int = 10
@@ -49,6 +52,16 @@ fun main() {
     println(consola.marca)
     println(consola.modelo)
     println(consola.tipoUsuario)
+
+    val clasica = ConsolaClasica("CC12CD", "Sony","PlayStation 2", "socio")
+    val moderna = ConsolaModerna("CM22TO", "Microsoft","Xbox Series S", "infantil")
+    val vr = ConsolaVR("VR44RG", "Meta", "Quest 3", "educacional", true)
+
+    println("Consola Clasica registrada: ${clasica.marca} ${clasica.modelo} - Tarifa: $${clasica.tarifaBase}")
+    println("Consola Moderna registrada: ${moderna.marca} ${moderna.modelo} - Tarifa: $${moderna.tarifaBase}")
+
+    val textoAccesorios = if(vr.accesoriosPremium) "Si" else "No"
+    println("Consola VR registrada: ${vr.marca} ${vr.modelo} - Accesorio Premiun: $textoAccesorios - Tarifa: $${vr.tarifaBase}")
 }
 
 fun calcularCostoBase(
