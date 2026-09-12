@@ -62,6 +62,23 @@ fun main() {
 
     val textoAccesorios = if(vr.accesoriosPremium) "Si" else "No"
     println("Consola VR registrada: ${vr.marca} ${vr.modelo} - Accesorio Premiun: $textoAccesorios - Tarifa: $${vr.tarifaBase}")
+
+    val consolas: List<Consola> = listOf(
+        ConsolaClasica("CC12CD", "Sony", "PlayStation 2", "socio"),
+        ConsolaModerna("CM22TO", "Microsoft", "Xbox Series S", "infantil"),
+        ConsolaVR("VR44RG", "Meta", "Quest 3", "educacional", true)
+    )
+
+    val minutosJugados = 90
+
+    for (consola in consolas) {
+        val totalPagar = consola.calcularTarifa(minutosJugados)
+
+        println("Consola: ${consola.marca} ${consola.modelo}")
+        println("Usuario: ${consola.tipoUsuario}")
+        println("Minutos jugados: $minutosJugados")
+        println("Total a pagar: $$totalPagar")
+    }
 }
 
 fun calcularCostoBase(
